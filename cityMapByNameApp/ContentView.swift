@@ -36,7 +36,7 @@ struct ContentView: View {
                         viewModel.getCityData()
                     }) {
                         Image(systemName: "magnifyingglass")
-                            .foregroundColor(.white)
+                            .foregroundColor(.gray)
                             .font(.system(size: 28))
                     }
                     .padding(.trailing,-1) // Add padding for the button
@@ -44,6 +44,7 @@ struct ContentView: View {
                 .frame(width: 350, height: 50) // Adjust frame as needed
                 Map{
                     Marker(viewModel.cityData?.name ?? "", coordinate: CLLocationCoordinate2D(latitude: (viewModel.cityData?.coord.lat) ?? 25.3726, longitude: (viewModel.cityData?.coord.lon) ?? 49.587 ))
+                        
                 }
             }
             
